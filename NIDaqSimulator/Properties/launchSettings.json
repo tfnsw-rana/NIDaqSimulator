@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NIDaqSimulator": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
