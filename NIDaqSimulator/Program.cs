@@ -34,17 +34,21 @@ namespace HelloWorld
 
 
                 //Offset Nulling 
-                //myTask.AIChannels[0].PerformBridgeOffsetNullingCalibration();
+                Task1.AIChannels[0].PerformBridgeOffsetNullingCalibration();
 
                 //Shunt Calibration & Wheatstone Parameters
-                //myTask.AIChannels[0].CalibrationEnable = true;
-                //myTask.AIChannels[0].BridgeShuntCalibrationEnable = true;
+                //Task1.AIChannels[0].CalibrationEnable = true;
+                //Task1.AIChannels[0].BridgeShuntCalibrationEnable = true;
                 //myTask.AIChannels[0].PerformBridgeShuntCalibration(50000, ShuntElementLocation.R3, 100000);
 
                 //Acquire Data
                 Console.WriteLine("Read the data");
                 AnalogSingleChannelReader reader1 = new AnalogSingleChannelReader(Task1.Stream);
                 reader1.SynchronizeCallbacks = true;
+
+                
+                double sample = reader1.ReadSingleSample();
+                Console.WriteLine("Sample Captured: " + sample);
 
                 Console.WriteLine("Clear Task");
                 Task1.Dispose();
