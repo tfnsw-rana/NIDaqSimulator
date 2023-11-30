@@ -1,12 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Platforms>AnyCPU;x86;ARM64</Platforms>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <Platforms>x86</Platforms>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="NationalInstruments.Analysis.Enterprise">
+      <HintPath>..\..\..\..\..\Program Files (x86)\National Instruments\Measurement Studio\DotNET\v4.0\AnyCPU\NationalInstruments.Analysis.Enterprise 19.0.40\NationalInstruments.Analysis.Enterprise.dll</HintPath>
+    </Reference>
     <Reference Include="NationalInstruments.Common">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\National Instruments\Measurement Studio\DotNET\v4.0\AnyCPU\NationalInstruments.Common 19.1.40\NationalInstruments.Common.dll</HintPath>
     </Reference>
