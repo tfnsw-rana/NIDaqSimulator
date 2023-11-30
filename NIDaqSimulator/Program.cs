@@ -45,17 +45,22 @@ namespace HelloWorld
                 Console.WriteLine("Read the data");
                 AnalogSingleChannelReader reader1 = new AnalogSingleChannelReader(Task1.Stream);
                 reader1.SynchronizeCallbacks = true;
+                while (true)
+                {                   
+                    double sample = reader1.ReadSingleSample();
+                    Console.WriteLine("Sample Captured: " + sample);
+                }
+                //Console.WriteLine("Write the data");
+                //AnalogSingleChannelWriter writer1 = new AnalogSingleChannelWriter(Task1.Stream);
 
-                
-                double sample = reader1.ReadSingleSample();
-                Console.WriteLine("Sample Captured: " + sample);
 
-                Console.WriteLine("Clear Task");
-                Task1.Dispose();
+                //Console.WriteLine("Clear Task");
+                //Task1.Dispose();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                while (true)                     Console.WriteLine("Error");
             }
 
         }
